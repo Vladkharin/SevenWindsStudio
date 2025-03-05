@@ -1,0 +1,125 @@
+.header
+    width: 100vw
+    height: auto
+    background-color: var(--jaguar-color)
+
+.toolbar
+    width: auto
+    height: 44px
+    display: flex
+    align-items: center
+    padding: 0px 20px
+    gap: 20px
+    border-bottom: 1px solid var(--paynesGrey-color)
+
+    &__btnMenu
+        width: 24px
+        height: 24px
+        border: none
+        background: url('./icons/menu.svg')
+        cursor: pointer
+
+    &__btnBack
+        width: 24px
+        height: 24px
+        border: none
+        background: url('./icons/arrowBack.svg')
+        cursor: pointer
+
+    &__text
+        font-weight: 400
+        font-size: 14px
+        line-height: 16.41px
+        letter-spacing: 0%
+        color: var(--spunPearl-color)
+        cursor: pointer
+        height: 100%
+        text-align: center
+        line-height: 44px
+
+.active
+    color: var(--white-color)
+    border-bottom: 2px solid var(--white-color)
+
+.informationbar
+    width: auto
+    height: 44px
+    display: flex
+    align-items: center
+    border-bottom: 1px solid var(--paynesGrey-color)
+
+.choose_project
+    width: 203px
+    height: 100%
+    display: flex
+    justify-content: space-between
+    padding-right: 10px
+    padding-left: 20px
+    border-right: 1px solid var(--paynesGrey-color)
+    align-items: center
+
+    &__title
+        font-weight: 400
+        font-size: 14px
+        line-height: 16.41px
+        letter-spacing: 0%
+        color: var(--white-color)
+
+    &__subtitle
+        font-weight: 400
+        font-size: 10px
+        line-height: 11.72px
+        letter-spacing: 0%
+        color: var(--white-color)
+
+    &__arrow
+        display: flex
+        align-items: center
+        cursor: pointer
+
+.project
+    width: auto
+    height: 100%
+    padding: 0 10px
+    font-weight: 400
+    font-size: 18px
+    line-height: 21.09px
+    letter-spacing: 0%
+    color: var(--white-color)
+    display: flex
+    align-items: center
+    border-right: 1px solid var(--paynesGrey-color)
+
+.nav
+    float: left
+    height: 90.6vh
+    width: 233px
+    background-color: var(--jaguar-color)
+    display: flex
+    flex-direction: column
+    border-right: 1px solid var(--paynesGrey-color)
+
+    &__item
+        display: flex
+        align-items: center
+        height: 32px
+        width: auto
+        padding-left: 20px
+        gap: 14px
+        cursor: pointer
+
+        &_text
+            font-weight: 400
+            font-size: 14px
+            line-height: 16.41px
+            letter-spacing: 0%
+            color: var(--white-color)
+
+.active_project
+    background-color: var(--spunPearl-color)
+
+.aside
+    float: right
+    width: calc(100% - 234px)
+    height: 90.6vh
+    background-color: var(--blackRussian-color)

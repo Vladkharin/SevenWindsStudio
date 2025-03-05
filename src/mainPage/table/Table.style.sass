@@ -1,0 +1,59 @@
+
+.table
+    display: grid
+    grid-template-columns: 110px calc( 100%/2.5 ) repeat(4, auto)
+    grid-template-rows: 41px
+    grid-auto-rows: 60px
+    &_column
+        font-weight: 400
+        font-size: 14px
+        line-height: 18.2px
+        letter-spacing: 0.1px
+        color: var(--paynesGrey-color)
+        padding-left: 10px
+        text-align: left
+        line-height: 41px
+
+    &_item
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        padding-left: 12px
+
+    &_buttons_wrapper
+        display: flex
+        align-items: center
+        gap: 6px
+
+        &:hover
+            background-color: var(--paynesGrey-color)
+            padding: 2px 3px 2px 0
+            border-radius: 8px
+
+        &:hover .table_button_delete
+            display: block
+
+    &_button_document
+        width: 24px
+        height: 24px
+        background: none
+        border: none
+        padding: 0
+        cursor: pointer
+
+        img
+            width: 100%
+            height: 100%
+
+    &_button_delete
+        display: none
+        width: 16px
+        height: 16px
+        background: none
+        border: none
+        padding: 0
+        cursor: pointer
+
+        img
+            width: 100%
+            height: 100%

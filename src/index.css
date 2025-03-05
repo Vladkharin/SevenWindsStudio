@@ -1,0 +1,13 @@
+:root {
+  --jaguar-color: #27272a;
+  --paynesGrey-color: #414144;
+  --blackRussian-color: #202124;
+  --white-color: #ffffff;
+  --spunPearl-color: #a1a1aa;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+}
