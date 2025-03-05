@@ -19,5 +19,5 @@ export type DATALIST = {
   equipmentCosts: number;
   overheads: number;
   estimatedProfit: number;
-  child: DATALIST[] | [];
+  child: DATALIST;
 }[];
