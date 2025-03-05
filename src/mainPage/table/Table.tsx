@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import "./Table.style.sass";
 import { getData } from "./Table.services";
+import { DATALIST } from "./Table.types";
 
 export function Table() {
   const [dataList, setDataList] = useState();
 
   const fetchData = async () => {
-    const data = await getData();
+    const data: DATALIST = await getData();
     setDataList(data);
   };
 
