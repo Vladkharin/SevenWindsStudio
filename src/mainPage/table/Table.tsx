@@ -17,48 +17,46 @@ export function Table() {
     fetchData();
   }, []);
 
-  const createRows = ({ items, level }: { items: DATALIST; level: number }) => {
+  const createRows = (items: DATALIST, level: number) => {
     console.log(items);
-    // if (Array.isArray(items) && items.length) {
-
-    //   });
-    // }
-
-    Array.isArray(items) && items.length ? (
-      <React.Fragment>
-        {items?.map((item) => (
-          <>
-            <div className={"table_item"}>
-              <div className={"table_buttons_wrapper"}>
-                <button data-id={item.id} className={"table_button_document"}>
-                  <img src="./icons/document.svg" alt="document" />
-                  <div className={"line_down"} style={{ height: `calc(${item.total}*53px)` }} />
-                </button>
-                <button data-id={item.id} className="table_button_delete">
-                  <img src="./icons/TrashFill.svg" alt="trash" />
-                </button>
+    if (Array.isArray(items) && items.length) {
+      return (
+        <React.Fragment>
+          {items?.map((item) => (
+            <>
+              <div className={"table_item"} style={{ paddingLeft: `calc(${level} * 20px + 12px)` }}>
+                <div className={"table_buttons_wrapper"}>
+                  <button data-id={item.id} className={"table_button_document"}>
+                    <img src="./icons/document.svg" alt="document" />
+                    <div className={"line_down"} style={{ height: `calc(${item.total}*53px)` }} />
+                    <div className={"line_left"} style={{ display: level > 0 ? "block" : "none" }} />
+                  </button>
+                  <button data-id={item.id} className="table_button_delete">
+                    <img src="./icons/TrashFill.svg" alt="trash" />
+                  </button>
+                </div>
               </div>
-            </div>
-            <div className={"table_item"} data-id={item.id}>
-              {item.rowName}
-            </div>
-            <div className={"table_item"} data-id={item.id}>
-              {item.mainCosts}
-            </div>
-            <div className={"table_item"} data-id={item.id}>
-              {item.equipmentCosts}
-            </div>
-            <div className={"table_item"} data-id={item.id}>
-              {item.overheads}
-            </div>
-            <div className={"table_item"} data-id={item.id}>
-              {item.supportCosts}
-            </div>
-            <createRows items={item.child} level={level + 1} />
-          </>
-        ))}
-      </React.Fragment>
-    ) : null;
+              <div className={"table_item"} data-id={item.id}>
+                {item.rowName}
+              </div>
+              <div className={"table_item"} data-id={item.id}>
+                {item.mainCosts}
+              </div>
+              <div className={"table_item"} data-id={item.id}>
+                {item.equipmentCosts}
+              </div>
+              <div className={"table_item"} data-id={item.id}>
+                {item.overheads}
+              </div>
+              <div className={"table_item"} data-id={item.id}>
+                {item.supportCosts}
+              </div>
+              {createRows(item.child, level + 1)}
+            </>
+          ))}
+        </React.Fragment>
+      );
+    }
   };
 
   if (!dataList) {
@@ -73,7 +71,7 @@ export function Table() {
       <div className={"table_column"}>Оборудование</div>
       <div className={"table_column"}>Накладные расходы</div>
       <div className={"table_column"}>Сметная прибыль</div>
-      <CreateRows items={dataList} level={0} />
+      {createRows(dataList, 0)}
     </div>
   );
 }
